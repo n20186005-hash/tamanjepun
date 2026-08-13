@@ -1,0 +1,261 @@
+---
+import '../styles/global.css';
+
+const title = 'Taman Jepun Bukit Tinggi | Panduan Lawatan di Bentong, Pahang';
+const description = 'Panduan bebas untuk melawat Taman Jepun (Japanese Garden / Japanese Village) di Bukit Tinggi, Bentong: tiket, masa terbaik, parkir, pengangkutan, makanan, tarikan berdekatan dan peta.';
+const site = Astro.site;
+const canonical = site ? new URL(Astro.url.pathname, site).toString() : undefined;
+const ogImage = site ? new URL('/images/japanese-village-garden.jpg', site).toString() : '/images/japanese-village-garden.jpg';
+
+const faq = [
+  { q: 'Berapa lama sesuai diperuntukkan di Taman Jepun?', a: 'Kebanyakan pelawat selesa memperuntukkan sekitar 1 hingga 2 jam untuk taman, kolam koi, foto dan laluan berbukit. Tambah masa jika anda mahu meneruskan ke Botanical Garden.' },
+  { q: 'Adakah Taman Jepun sesuai untuk warga emas atau kerusi roda?', a: 'Laluan masuk mempunyai tangga, cerun dan permukaan batu yang boleh licin selepas hujan. Ia kurang sesuai untuk kerusi roda dan mungkin mencabar bagi pelawat dengan mobiliti terhad.' },
+  { q: 'Adakah tiket berasingan diperlukan?', a: 'Maklumat operator menyatakan tiket masuk kawasan Colmar Tropicale merangkumi akses ke Japanese Village dan beberapa tarikan berkaitan. Harga dan skop akses boleh berubah, jadi semak dengan operator sebelum perjalanan.' },
+  { q: 'Boleh datang tanpa kereta?', a: 'Boleh, tetapi pilihan lebih terhad. Dari Kuala Lumpur, semak shuttle resort atau gunakan bas ke Bentong diikuti teksi/e-hailing. Dari Colmar Tropicale, Japanese Village hanya beberapa minit dengan shuttle atau kenderaan.' },
+  { q: 'Bila masa terbaik untuk bergambar?', a: 'Datang awal pagi untuk udara lebih nyaman dan cahaya lembut. Hari bekerja biasanya lebih tenang. Selepas hujan, batu dan tangga boleh licin, jadi gunakan kasut yang mencengkam.' }
+];
+
+const attractionSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'TouristAttraction',
+  name: 'Taman Jepun Bukit Tinggi (Japanese Garden / Japanese Village)',
+  ...(canonical ? { url: canonical } : {}),
+  ...(site ? { image: [ogImage] } : {}),
+  description,
+  telephone: '+60 11-2422 0686',
+  address: {
+    '@type': 'PostalAddress',
+    streetAddress: 'Jln Bukit Tinggi',
+    addressLocality: 'Bukit Tinggi, Bentong',
+    addressRegion: 'Pahang',
+    postalCode: '28750',
+    addressCountry: 'MY'
+  },
+  geo: {
+    '@type': 'GeoCoordinates',
+    latitude: 3.419011196541175,
+    longitude: 101.84008581213173
+  },
+  openingHoursSpecification: [
+    { '@type': 'OpeningHoursSpecification', dayOfWeek: ['Monday','Tuesday','Wednesday','Thursday','Friday','Saturday','Sunday'], opens: '08:00', closes: '22:00' }
+  ],
+  aggregateRating: {
+    '@type': 'AggregateRating',
+    ratingValue: '4.0',
+    reviewCount: '9899',
+    bestRating: '5'
+  }
+};
+
+const faqSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'FAQPage',
+  mainEntity: faq.map(({ q, a }) => ({
+    '@type': 'Question',
+    name: q,
+    acceptedAnswer: { '@type': 'Answer', text: a }
+  }))
+};
+
+const foods = [
+  { name: 'Gather By The Hill Local Delight', note: 'Pilihan santai untuk sarapan, mi dan hidangan tempatan; sesuai singgah sebelum atau selepas naik ke kawasan resort.' },
+  { name: 'Restoran Remember Me 126', note: 'Restoran Cina gaya keluarga di Kampung Bukit Tinggi, sesuai untuk hidangan berkongsi dan makan tengah hari selepas lawatan.' },
+  { name: 'Restoran River Bay', note: 'Pilihan makan tepi sungai dengan hidangan gaya Cina dan makanan laut; suasana lebih santai untuk makan lewat tengah hari.' }
+];
+
+const nearby = [
+  { name: 'Colmar Tropicale', meta: '± 5 min dari Japanese Village', note: 'Perkampungan bertema Perancis dengan seni bina Alsace, dataran pejalan kaki dan lokasi foto.' },
+  { name: 'Botanical Garden', meta: 'Dalam zon Japanese Village', note: 'Laluan hijau di kawasan hutan tanah tinggi; sesuai digabungkan dalam lawatan yang sama.' },
+  { name: 'Chamang Waterfall', meta: 'Bentong', note: 'Pilihan sambungan untuk pencinta alam jika anda mahu jadikan lawatan ini perjalanan sehari di Bentong.' }
+];
+---
+<!doctype html>
+<html lang="ms">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width" />
+    <meta name="theme-color" content="#17352a" />
+    <meta name="description" content={description} />
+    <title>{title}</title>
+    {canonical && <link rel="canonical" href={canonical} />}
+    {site && <link rel="sitemap" href={new URL('/sitemap-index.xml', site).toString()} />}
+
+    <meta property="og:type" content="website" />
+    <meta property="og:locale" content="ms_MY" />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:image" content={ogImage} />
+    {canonical && <meta property="og:url" content={canonical} />}
+    <meta name="twitter:card" content="summary_large_image" />
+
+    <link rel="icon" type="image/svg+xml" href="/brand/favicon.svg" />
+    <link rel="icon" type="image/png" sizes="32x32" href="/brand/favicon-32.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="/brand/favicon-16.png" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/brand/apple-touch-icon.png" />
+
+    <script type="application/ld+json" set:html={JSON.stringify(attractionSchema)}></script>
+    <script type="application/ld+json" set:html={JSON.stringify(faqSchema)}></script>
+
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-HXM22WWPKP"></script>
+    <script is:inline>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-HXM22WWPKP');
+    </script>
+  </head>
+  <body>
+    <header class="fixed inset-x-0 top-0 z-50 border-b border-white/10 bg-[#17352a]/90 backdrop-blur-xl">
+      <div class="mx-auto flex max-w-7xl items-center justify-between px-5 py-3 lg:px-8">
+        <a href="#atas" class="focus-ring rounded-lg" aria-label="Kembali ke atas">
+          <img src="/brand/logo.svg" alt="Taman Jepun Bukit Tinggi" class="h-12 w-auto brightness-[4] grayscale" width="210" height="48" />
+        </a>
+        <nav class="hidden gap-6 text-sm font-semibold text-[#f5f0e5] md:flex" aria-label="Navigasi utama">
+          <a class="focus-ring rounded hover:text-[#d8bc7a]" href="#rancang">Rancang</a>
+          <a class="focus-ring rounded hover:text-[#d8bc7a]" href="#pengangkutan">Pengangkutan</a>
+          <a class="focus-ring rounded hover:text-[#d8bc7a]" href="#makan">Makan</a>
+          <a class="focus-ring rounded hover:text-[#d8bc7a]" href="#peta">Peta</a>
+          <a class="focus-ring rounded hover:text-[#d8bc7a]" href="#faq">FAQ</a>
+        </nav>
+        <a href="https://maps.app.goo.gl/GDoHNKf3BSZ2o6gW7" rel="noopener noreferrer" target="_blank" class="focus-ring rounded-full border border-[#d8bc7a]/60 px-4 py-2 text-sm font-bold text-[#f5f0e5] hover:bg-[#f5f0e5] hover:text-[#17352a]">Buka peta ↗</a>
+      </div>
+    </header>
+
+    <main id="atas">
+      <section class="relative min-h-[92vh] overflow-hidden bg-[#17352a] text-white">
+        <img src="/images/japanese-village-garden.jpg" alt="Taman Jepun Bukit Tinggi dengan jambatan batu dan kehijauan" class="absolute inset-0 h-full w-full object-cover object-center" width="1000" height="667" fetchpriority="high" />
+        <div class="absolute inset-0 bg-[linear-gradient(90deg,rgba(18,45,34,.94)_0%,rgba(18,45,34,.68)_42%,rgba(18,45,34,.18)_100%)]"></div>
+        <div class="absolute inset-y-0 right-5 hidden items-center lg:flex"><span class="vertical-mark text-xs font-bold uppercase text-white/55">Bentong · Pahang · Malaysia</span></div>
+        <div class="relative mx-auto flex min-h-[92vh] max-w-7xl items-end px-5 pb-20 pt-36 lg:px-8 lg:pb-28">
+          <div class="max-w-3xl">
+            <div class="mb-6 inline-flex items-center gap-2 rounded-full border border-white/20 bg-white/10 px-4 py-2 text-xs font-bold uppercase tracking-[.2em] backdrop-blur">Hutan tanah tinggi · taman Jepun</div>
+            <h1 class="serif text-5xl font-bold leading-[.98] tracking-tight sm:text-6xl lg:text-8xl">Sunyi hutan,<br/><span class="text-[#d8bc7a]">ritma Jepun.</span></h1>
+            <p class="mt-6 max-w-2xl text-lg leading-8 text-white/82 sm:text-xl">Di lereng Bukit Tinggi, batu, air dan pokok bertemu dalam taman yang tenang—tempat untuk berjalan perlahan, mengambil foto dan berehat seketika daripada kota.</p>
+            <div class="mt-9 flex flex-wrap gap-3">
+              <a href="#rancang" class="focus-ring rounded-full bg-[#f5f0e5] px-6 py-3 text-sm font-extrabold text-[#17352a] hover:bg-white">Rancang lawatan</a>
+              <a href="#peta" class="focus-ring rounded-full border border-white/30 px-6 py-3 text-sm font-extrabold text-white hover:bg-white/10">Lihat lokasi</a>
+            </div>
+            <div class="mt-12 grid max-w-2xl grid-cols-2 gap-px overflow-hidden rounded-2xl border border-white/15 bg-white/15 sm:grid-cols-4">
+              <div class="bg-[#17352a]/80 p-4 backdrop-blur"><div class="text-xs uppercase tracking-wider text-white/55">Penilaian</div><div class="mt-1 font-bold">4.0 / 5</div></div>
+              <div class="bg-[#17352a]/80 p-4 backdrop-blur"><div class="text-xs uppercase tracking-wider text-white/55">Waktu tersenarai</div><div class="mt-1 font-bold">08:00–22:00</div></div>
+              <div class="bg-[#17352a]/80 p-4 backdrop-blur"><div class="text-xs uppercase tracking-wider text-white/55">Gaya lawatan</div><div class="mt-1 font-bold">Santai + foto</div></div>
+              <div class="bg-[#17352a]/80 p-4 backdrop-blur"><div class="text-xs uppercase tracking-wider text-white/55">Medan</div><div class="mt-1 font-bold">Tangga & cerun</div></div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="paper-grid border-b border-[#17352a]/10 py-16 lg:py-24">
+        <div class="mx-auto grid max-w-7xl gap-12 px-5 lg:grid-cols-[1.05fr_.95fr] lg:px-8">
+          <div>
+            <p class="text-xs font-black uppercase tracking-[.24em] text-[#a63d2f]">Tentang tempat ini</p>
+            <h2 class="serif mt-4 text-4xl font-bold tracking-tight sm:text-5xl">Taman Jepun dalam hutan hujan Pahang.</h2>
+            <p class="mt-6 max-w-2xl text-lg leading-8 text-[#17352a]/75">Japanese Village ialah kumpulan tarikan bertema Jepun di Berjaya Hills, sekitar lima minit dengan kereta atau shuttle dari Colmar Tropicale. Antara elemen utamanya ialah kolam koi, batu taman, aliran air, rumah teh dan laluan hijau yang bersambung dengan Botanical Garden.</p>
+            <div class="mt-8 flex gap-4 border-l-2 border-[#a63d2f] pl-5 text-sm leading-7 text-[#17352a]/70"><strong class="text-[#17352a]">Jangkaan yang tepat:</strong><span>datang untuk suasana, fotografi dan berjalan di alam—bukan untuk taman tema yang penuh aktiviti sepanjang hari.</span></div>
+          </div>
+          <figure class="relative">
+            <img src="/images/japanese-village-view.jpg" alt="Laluan batu, kolam koi dan rumah tradisional di Japanese Village" class="card-shadow aspect-[4/3] w-full rounded-[2rem] object-cover" width="1000" height="667" loading="lazy" />
+            <figcaption class="mt-3 text-xs text-[#17352a]/55">Laluan berbatu dan air ialah sebahagian daripada pengalaman; kasut dengan cengkaman baik sangat membantu selepas hujan.</figcaption>
+          </figure>
+        </div>
+      </section>
+
+      <section id="rancang" class="bg-[#efe8da] py-16 lg:py-24">
+        <div class="mx-auto max-w-7xl px-5 lg:px-8">
+          <div class="max-w-3xl">
+            <p class="text-xs font-black uppercase tracking-[.24em] text-[#a63d2f]">Sebelum pergi</p>
+            <h2 class="serif mt-4 text-4xl font-bold tracking-tight sm:text-5xl">Rancang lawatan tanpa tergesa-gesa.</h2>
+          </div>
+          <div class="mt-10 grid gap-5 md:grid-cols-2 lg:grid-cols-4">
+            <article class="rounded-3xl bg-[#17352a] p-6 text-white"><span class="text-3xl">◷</span><h3 class="mt-8 text-xl font-black">Masa terbaik</h3><p class="mt-3 text-sm leading-6 text-white/72">Awal pagi biasanya lebih nyaman, cahaya lebih lembut dan suasana lebih tenang. Hari bekerja cenderung kurang sesak.</p></article>
+            <article class="rounded-3xl border border-[#17352a]/10 bg-white/70 p-6"><span class="text-3xl">⌛</span><h3 class="mt-8 text-xl font-black">Tempoh lawatan</h3><p class="mt-3 text-sm leading-6 text-[#17352a]/70">Peruntukkan kira-kira 1–2 jam untuk taman dan foto; tambah masa jika meneruskan ke Botanical Garden atau Colmar Tropicale.</p></article>
+            <article class="rounded-3xl border border-[#17352a]/10 bg-white/70 p-6"><span class="text-3xl">◒</span><h3 class="mt-8 text-xl font-black">Cuaca & laluan</h3><p class="mt-3 text-sm leading-6 text-[#17352a]/70">Cerun, tangga dan batu boleh licin. Bawa air, payung ringan serta penghalau nyamuk, dan elakkan kasut tapak licin.</p></article>
+            <article class="rounded-3xl border border-[#17352a]/10 bg-white/70 p-6"><span class="text-3xl">♿</span><h3 class="mt-8 text-xl font-black">Akses mobiliti</h3><p class="mt-3 text-sm leading-6 text-[#17352a]/70">Akses tanpa tangga adalah terhad. Pelawat dengan mobiliti terhad disaran semak keadaan semasa dan bantuan shuttle sebelum datang.</p></article>
+          </div>
+
+          <div class="mt-10 grid gap-6 lg:grid-cols-2">
+            <article class="rounded-[2rem] bg-white p-7 card-shadow sm:p-9">
+              <div class="flex items-start justify-between gap-6"><div><p class="text-xs font-black uppercase tracking-[.2em] text-[#a63d2f]">Tiket / kos</p><h3 class="serif mt-3 text-3xl font-bold">Akses kawasan Berjaya Hills</h3></div><span class="rounded-full bg-[#efe8da] px-4 py-2 text-sm font-black">RM</span></div>
+              <p class="mt-5 leading-7 text-[#17352a]/72">FAQ operator menyenaraikan tiket masuk Colmar Tropicale pada <strong>RM14 dewasa</strong> dan <strong>RM7 kanak-kanak 4–12 tahun</strong>, termasuk akses ke Japanese Village. Aktiviti tambahan seperti sewaan kimono/yukata atau pengalaman tertentu boleh dikenakan caj berasingan.</p>
+              <p class="mt-4 text-sm leading-6 text-[#17352a]/55">Harga, waktu dan kemudahan boleh berubah. Semak dengan operator sebelum perjalanan, terutama jika lawatan anda bergantung pada rumah teh, spa atau shuttle.</p>
+            </article>
+            <article class="rounded-[2rem] bg-[#294f3c] p-7 text-white card-shadow sm:p-9">
+              <p class="text-xs font-black uppercase tracking-[.2em] text-[#d8bc7a]">Parkir</p><h3 class="serif mt-3 text-3xl font-bold">Letak kereta dekat kaki bukit.</h3>
+              <p class="mt-5 leading-7 text-white/76">Terdapat beberapa kawasan parkir di sekitar pendekatan Japanese Village. Lot yang paling hampir boleh terhad ketika hujung minggu. Dari parkir, anda masih perlu mendaki tangga dan laluan cerun untuk sampai ke taman.</p>
+              <ul class="mt-5 space-y-2 text-sm text-white/75"><li>• Datang awal jika mahu parkir paling hampir.</li><li>• Jangan tinggalkan barang berharga kelihatan dalam kereta.</li><li>• Selepas hujan, beri masa tambahan untuk berjalan dengan selamat.</li></ul>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section id="pengangkutan" class="py-16 lg:py-24">
+        <div class="mx-auto max-w-7xl px-5 lg:px-8">
+          <div class="grid gap-10 lg:grid-cols-[.8fr_1.2fr]">
+            <div class="lg:sticky lg:top-24 lg:self-start"><p class="text-xs font-black uppercase tracking-[.24em] text-[#a63d2f]">Cara ke sini</p><h2 class="serif mt-4 text-4xl font-bold sm:text-5xl">Naik ke Bukit Tinggi dengan pelan yang jelas.</h2><p class="mt-5 leading-7 text-[#17352a]/70">Japanese Garden berada di kawasan bukit, jadi bahagian akhir perjalanan biasanya memerlukan kereta, teksi/e-hailing atau shuttle resort.</p></div>
+            <div class="divide-y divide-[#17352a]/10 overflow-hidden rounded-[2rem] border border-[#17352a]/10 bg-white">
+              <article class="grid gap-4 p-6 sm:grid-cols-[150px_1fr] sm:p-8"><h3 class="font-black">Dari KLIA</h3><div><p class="leading-7 text-[#17352a]/72">Pilihan paling mudah ialah teksi/e-hailing terus ke Berjaya Hills. Untuk mengurangkan kos, ambil KLIA Ekspres/transit ke KL Sentral, kemudian sambung dengan e-hailing atau ke titik shuttle resort di Kuala Lumpur.</p><p class="mt-2 text-sm text-[#17352a]/50">Perjalanan jalan raya lazimnya sekitar 1½–2 jam, bergantung trafik dan cuaca.</p></div></article>
+              <article class="grid gap-4 p-6 sm:grid-cols-[150px_1fr] sm:p-8"><h3 class="font-black">Bas / shuttle</h3><div><p class="leading-7 text-[#17352a]/72">Tiada bas awam yang berhenti terus di pintu taman. Semak shuttle Colmar Tropicale dari Kuala Lumpur (tempahan awal disyorkan), atau naik bas ke Bentong dan sambung dengan teksi/e-hailing ke Bukit Tinggi.</p><p class="mt-2 text-sm text-[#17352a]/50">Jika menggunakan shuttle resort, sahkan waktu balik supaya tidak terlepas perjalanan turun.</p></div></article>
+              <article class="grid gap-4 p-6 sm:grid-cols-[150px_1fr] sm:p-8"><h3 class="font-black">Teksi / e-hailing</h3><div><p class="leading-7 text-[#17352a]/72">Grab, teksi atau pemandu sewa sesuai untuk perjalanan dari Kuala Lumpur, Bentong atau Genting. Liputan e-hailing untuk perjalanan pulang dari kawasan bukit boleh tidak konsisten; atur masa ambil atau nombor pemandu lebih awal.</p></div></article>
+              <article class="grid gap-4 p-6 sm:grid-cols-[150px_1fr] sm:p-8"><h3 class="font-black">Dari Colmar</h3><div><p class="leading-7 text-[#17352a]/72">Japanese Village terletak kira-kira lima minit dengan kereta atau shuttle dari Colmar Tropicale. Ini cara paling mudah jika anda sudah berada dalam kawasan Berjaya Hills.</p></div></article>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="makan" class="bg-[#17352a] py-16 text-white lg:py-24">
+        <div class="mx-auto max-w-7xl px-5 lg:px-8">
+          <div class="flex flex-col justify-between gap-5 md:flex-row md:items-end"><div><p class="text-xs font-black uppercase tracking-[.24em] text-[#d8bc7a]">Sekitar Bukit Tinggi</p><h2 class="serif mt-4 text-4xl font-bold sm:text-5xl">Makan selepas berjalan.</h2></div><p class="max-w-xl text-sm leading-6 text-white/62">Kampung Bukit Tinggi terkenal dengan kedai makan keluarga, masakan Cina tempatan dan hidangan berasaskan halia Bentong. Semak status halal mengikut keperluan anda.</p></div>
+          <div class="mt-10 grid gap-5 md:grid-cols-3">
+            {foods.map((food, i) => <article class="rounded-3xl border border-white/12 bg-white/5 p-6"><div class="mb-10 text-xs font-black tracking-[.2em] text-[#d8bc7a]">0{i+1}</div><h3 class="text-xl font-black">{food.name}</h3><p class="mt-3 text-sm leading-6 text-white/68">{food.note}</p></article>)}
+          </div>
+        </div>
+      </section>
+
+      <section class="py-16 lg:py-24">
+        <div class="mx-auto max-w-7xl px-5 lg:px-8">
+          <div class="grid gap-10 lg:grid-cols-[.9fr_1.1fr]">
+            <div><p class="text-xs font-black uppercase tracking-[.24em] text-[#a63d2f]">Tarikan berdekatan</p><h2 class="serif mt-4 text-4xl font-bold sm:text-5xl">Jadikan ia perjalanan sehari.</h2><p class="mt-5 max-w-xl leading-7 text-[#17352a]/70">Japanese Garden paling berbaloi apabila digabungkan dengan satu atau dua hentian berdekatan, tanpa memadatkan jadual.</p></div>
+            <div>
+              <figure class="mb-5 overflow-hidden rounded-[2rem] bg-[#17352a] text-white card-shadow">
+                <img src="/images/colmar-tropicale.jpg" alt="Seni bina gaya Eropah di Colmar Tropicale, Bukit Tinggi" width="800" height="533" loading="lazy" class="aspect-[16/8] w-full object-cover" />
+                <figcaption class="p-5 text-sm text-white/70">Colmar Tropicale berada dalam kawasan Berjaya Hills dan mudah digabungkan dengan Japanese Village dalam satu perjalanan.</figcaption>
+              </figure>
+              <div class="space-y-4">{nearby.map((place) => <article class="group rounded-3xl border border-[#17352a]/10 bg-white p-6 transition hover:-translate-y-0.5"><div class="flex flex-wrap items-baseline justify-between gap-2"><h3 class="text-xl font-black">{place.name}</h3><span class="text-xs font-black uppercase tracking-[.16em] text-[#a63d2f]">{place.meta}</span></div><p class="mt-3 text-sm leading-6 text-[#17352a]/66">{place.note}</p></article>)}</div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="peta" class="bg-[#efe8da] py-16 lg:py-24">
+        <div class="mx-auto max-w-7xl px-5 lg:px-8">
+          <div class="grid gap-8 lg:grid-cols-[.68fr_1.32fr] lg:items-center">
+            <div><p class="text-xs font-black uppercase tracking-[.24em] text-[#a63d2f]">Lokasi</p><h2 class="serif mt-4 text-4xl font-bold sm:text-5xl">Cari pintu masuk, bukan sekadar Bukit Tinggi.</h2><p class="mt-5 leading-7 text-[#17352a]/70">Alamat: Jln Bukit Tinggi, Bukit Tinggi, 28750 Bentong, Pahang. Simpan peta sebelum naik—liputan data di kawasan bukit boleh berubah-ubah.</p><a href="https://maps.app.goo.gl/GDoHNKf3BSZ2o6gW7" target="_blank" rel="noopener noreferrer" class="focus-ring mt-7 inline-flex rounded-full bg-[#17352a] px-5 py-3 text-sm font-black text-white hover:bg-[#294f3c]">Buka Google Maps ↗</a></div>
+            <div class="overflow-hidden rounded-[2rem] border border-[#17352a]/10 bg-white p-2 card-shadow">
+              <iframe title="Peta Taman Jepun Bukit Tinggi" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3982.716821349576!2d101.84008581213173!3d3.419011196541175!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x31cc16d645e1893f%3A0x69723f6cd7c21420!2z5q2m5ZCJ5LiB5a6c5pel5pys6Iqx5Zut!5e0!3m2!1sms!2smy!4v1786583622753!5m2!1sms!2smy" width="600" height="450" style="border:0;" allowfullscreen loading="lazy" referrerpolicy="strict-origin-when-cross-origin" class="min-h-[460px] w-full rounded-[1.55rem]"></iframe>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="faq" class="py-16 lg:py-24">
+        <div class="mx-auto max-w-5xl px-5 lg:px-8">
+          <div class="text-center"><p class="text-xs font-black uppercase tracking-[.24em] text-[#a63d2f]">FAQ</p><h2 class="serif mt-4 text-4xl font-bold sm:text-5xl">Soalan biasa sebelum naik bukit.</h2></div>
+          <div class="mt-10 space-y-3">{faq.map((item) => <details class="group rounded-2xl border border-[#17352a]/10 bg-white p-5 open:card-shadow"><summary class="cursor-pointer list-none pr-8 font-black marker:hidden">{item.q}<span class="float-right text-[#a63d2f] transition group-open:rotate-45">＋</span></summary><p class="mt-4 max-w-3xl text-sm leading-7 text-[#17352a]/68">{item.a}</p></details>)}</div>
+        </div>
+      </section>
+
+      <section class="px-5 pb-16 lg:px-8 lg:pb-24">
+        <div class="mx-auto max-w-7xl overflow-hidden rounded-[2.5rem] bg-[#a63d2f] p-8 text-white sm:p-12 lg:p-16">
+          <div class="grid gap-8 lg:grid-cols-[1fr_auto] lg:items-end"><div><p class="text-xs font-black uppercase tracking-[.24em] text-white/65">Ringkasnya</p><h2 class="serif mt-4 max-w-4xl text-4xl font-bold sm:text-5xl">Datang awal. Pakai kasut baik. Berjalan perlahan.</h2><p class="mt-5 max-w-2xl leading-7 text-white/75">Taman ini paling menyerlah apabila anda datang untuk suasana—bunyi air, hijau hutan dan ruang untuk berhenti seketika.</p></div><a href="#atas" class="focus-ring inline-flex h-14 w-14 items-center justify-center rounded-full bg-white text-2xl font-black text-[#a63d2f]">↑</a></div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="border-t border-[#17352a]/10 bg-[#efe8da] py-10">
+      <div class="mx-auto flex max-w-7xl flex-col gap-6 px-5 lg:flex-row lg:items-end lg:justify-between lg:px-8">
+        <div><img src="/brand/logo.svg" alt="Taman Jepun Bukit Tinggi" width="210" height="48" class="h-14 w-auto" /><p class="mt-3 max-w-2xl text-xs leading-6 text-[#17352a]/55">Laman ini ialah panduan pelawat bebas dan bukan laman rasmi, tidak mewakili pengendali Taman Jepun, Berjaya Hills atau mana-mana agensi kerajaan.</p></div>
+        <div class="text-xs text-[#17352a]/50">Bentong, Pahang · Malaysia</div>
+      </div>
+    </footer>
+  </body>
+</html>

@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 420 96" role="img" aria-labelledby="title desc">
+  <title id="title">Taman Jepun Bukit Tinggi</title>
+  <desc id="desc">Simbol torii, daun dan aliran air dalam warna hijau hutan dan merah vermilion.</desc>
+  <g transform="translate(8 8)">
+    <circle cx="40" cy="40" r="36" fill="#F1EBDD"/>
+    <path d="M16 29h48l-4-7H20l-4 7Zm7 7h34v6H23v-6Zm5 6h6v22h-6V42Zm16 0h6v22h-6V42Z" fill="#A63D2F"/>
+    <path d="M46 14c9 4 15 10 19 18-11-1-19-4-25-10 1-4 3-7 6-8Z" fill="#294F3C"/>
+    <path d="M18 69c10-6 21-8 32-5 7 2 14 2 22-1-7 10-18 15-31 14-9-1-17-3-23-8Z" fill="#55745C"/>
+    <path d="M18 71c13 0 22 2 29 5" stroke="#F1EBDD" stroke-width="2" fill="none" stroke-linecap="round"/>
+  </g>
+  <g fill="#17352A">
+    <text x="94" y="39" font-family="Georgia, 'Times New Roman', serif" font-size="30" font-weight="700">Taman Jepun</text>
+    <text x="95" y="66" font-family="Arial, Helvetica, sans-serif" font-size="14" letter-spacing="3.3" font-weight="700">BUKIT TINGGI · PAHANG</text>
+  </g>
+</svg>
