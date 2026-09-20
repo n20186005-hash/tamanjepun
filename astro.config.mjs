@@ -3,8 +3,8 @@ import sitemap from '@astrojs/sitemap';
 import tailwindcss from '@tailwindcss/vite';
 
 // Satu-satunya tempat untuk menetapkan URL produksi.
-// Biarkan kosong sehingga domain sebenar tersedia; kemudian isi URL produksi sebenar di bawah.
-const site = '';
+// GSC menunjukkan klik masuk melalui http://tamanjepun.com — canonical HTTPS wajib diterbitkan.
+const site = 'https://tamanjepun.com';
 
 export default defineConfig({
   site: site || undefined,

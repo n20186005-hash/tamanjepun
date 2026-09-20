@@ -1,0 +1,33 @@
+---
+import '../styles/global.css';
+
+const title = 'Halaman tidak dijumpai | Taman Jepun Bukit Tinggi';
+const description = 'Halaman yang anda cari tidak wujud. Teruskan ke panduan Taman Jepun Bukit Tinggi untuk harga tiket, waktu operasi, pengangkutan dan peta.';
+const site = Astro.site;
+const canonical = site ? new URL('/404', site).toString() : undefined;
+---
+<!doctype html>
+<html lang="ms">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width" />
+    <meta name="theme-color" content="#17352a" />
+    <meta name="robots" content="noindex, follow" />
+    <meta name="description" content={description} />
+    <title>{title}</title>
+    {canonical && <link rel="canonical" href={canonical} />}
+    <link rel="icon" type="image/svg+xml" href="/brand/favicon.svg" />
+    <link rel="icon" type="image/png" sizes="32x32" href="/brand/favicon-32.png" />
+  </head>
+  <body>
+    <main class="mx-auto flex min-h-screen max-w-3xl flex-col justify-center px-5 py-24">
+      <p class="text-xs font-black uppercase tracking-[.24em] text-[#a63d2f]">Ralat 404</p>
+      <h1 class="serif mt-4 text-4xl font-bold tracking-tight sm:text-5xl">Halaman ini tidak dijumpai.</h1>
+      <p class="mt-5 leading-7 text-[#17352a]/70">Pautan mungkin telah berubah atau tidak pernah wujud. Gunakan pautan di bawah untuk kembali ke panduan utama.</p>
+      <div class="mt-8 flex flex-wrap gap-3">
+        <a href="/" class="focus-ring rounded-full bg-[#17352a] px-6 py-3 text-sm font-extrabold text-white hover:bg-[#294f3c]">Ke panduan utama</a>
+        <a href="/#rancang" class="focus-ring rounded-full border border-[#17352a]/25 px-6 py-3 text-sm font-extrabold hover:bg-[#17352a]/5">Harga tiket & waktu operasi</a>
+      </div>
+    </main>
+  </body>
+</html>
