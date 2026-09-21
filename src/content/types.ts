@@ -69,6 +69,8 @@ export interface Content {
     title: string;
     description: string;
   };
+  /** Nama laman SEO: "Nama Tarikan + Bandar + Panduan Pelancongan" (contoh: "Taman Jepun Bukit Tinggi Travel Guide"). */
+  siteName: string;
   brand: string;
   nav: {
     home: string;

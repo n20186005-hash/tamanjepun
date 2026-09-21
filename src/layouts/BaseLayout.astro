@@ -34,6 +34,17 @@ const alternates = site
   : [];
 const ogImageUrl = site ? new URL(ogImage, site).toString() : ogImage;
 const otherLocales = locales.filter((l) => l !== locale);
+
+/** Entiti WebSite supaya Google mengenali nama laman SEO (Nama Tarikan + Bandar + Panduan). */
+const websiteLd = site
+  ? {
+      '@context': 'https://schema.org',
+      '@type': 'WebSite',
+      name: t.siteName,
+      url: new URL(pathFor('home', locale), site).toString(),
+      inLanguage: meta.htmlLang
+    }
+  : undefined;
 ---
 
 <!doctype html>
@@ -49,7 +60,7 @@ const otherLocales = locales.filter((l) => l !== locale);
     {site && <link rel="sitemap" href={new URL('/sitemap-index.xml', site).toString()} />}
 
     <meta property="og:type" content="website" />
-    <meta property="og:site_name" content="Taman Jepun Bukit Tinggi" />
+    <meta property="og:site_name" content={t.siteName} />
     <meta property="og:locale" content={meta.ogLocale} />
     {otherLocales.map((l) => <meta property="og:locale:alternate" content={localeMeta[l].ogLocale} />)}
     <meta property="og:title" content={title} />
@@ -70,7 +81,7 @@ const otherLocales = locales.filter((l) => l !== locale);
     <link rel="apple-touch-icon" sizes="180x180" href="/brand/apple-touch-icon.png" />
     {preloadImage && <link rel="preload" as="image" href={preloadImage} />}
 
-    {jsonLd.map((schema) => <script type="application/ld+json" set:html={JSON.stringify(schema)}></script>)}
+    {[websiteLd, ...jsonLd].filter(Boolean).map((schema) => <script type="application/ld+json" set:html={JSON.stringify(schema)}></script>)}
 
     <script async src={`https://www.googletagmanager.com/gtag/js?id=${FACTS.gaId}`}></script>
     <script is:inline define:vars={{ gaId: FACTS.gaId }}>

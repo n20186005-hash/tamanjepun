@@ -6,6 +6,7 @@ export const content: Content = {
     description:
       'Tiket Taman Jepun Bukit Tinggi dari RM14, waktu operasi 08:00–22:00. Panduan sewa kimono, rumah teh Jepun, parkir, cara ke sana & peta lokasi.'
   },
+  siteName: 'Panduan Taman Jepun Bukit Tinggi',
   brand: 'Taman Jepun Bukit Tinggi',
   nav: { home: 'Utama', tickets: 'Tiket', photos: 'Foto', transport: 'Pengangkutan', faq: 'FAQ', map: 'Peta' },
   hero: {

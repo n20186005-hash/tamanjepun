@@ -6,6 +6,7 @@ export const content: Content = {
     description:
       '武吉丁宜日本村（Taman Jepun / Japanese Village）门票 RM14 起，开放时间 08:00–22:00。含和服租赁、日式茶屋、停车、交通与地图指南。'
   },
+  siteName: '武吉丁宜日本村旅游指南',
   brand: '武吉丁宜日本村',
   nav: { home: '指南', tickets: '门票', photos: '拍照', transport: '交通', faq: '常见问题', map: '地图' },
   hero: {

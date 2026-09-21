@@ -6,6 +6,7 @@ export const content: Content = {
     description:
       'Taman Jepun (Japanese Village) Bukit Tinggi ticket price from RM14, opening hours 08:00–22:00. Kimono rental, tea house, parking, how to get there & map.'
   },
+  siteName: 'Taman Jepun Bukit Tinggi Travel Guide',
   brand: 'Taman Jepun Bukit Tinggi',
   nav: { home: 'Guide', tickets: 'Tickets', photos: 'Photos', transport: 'Getting here', faq: 'FAQ', map: 'Map' },
   hero: {
