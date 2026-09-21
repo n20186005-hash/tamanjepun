@@ -1,0 +1,34 @@
+---
+import { FACTS } from '../../data/site';
+import type { Content } from '../../content/types';
+
+const { t } = Astro.props as { t: Content };
+const images = FACTS.images;
+---
+
+<section id="foto" class="border-b border-[#17352a]/10 py-16 lg:py-24">
+  <div class="mx-auto max-w-7xl px-5 lg:px-8">
+    <div class="max-w-3xl">
+      <p class="text-xs font-black uppercase tracking-[.24em] text-[#a63d2f]">{t.gallery.eyebrow}</p>
+      <h2 class="serif mt-4 text-4xl font-bold tracking-tight sm:text-5xl">{t.gallery.h2}</h2>
+      <p class="mt-5 leading-7 text-[#17352a]/70">{t.gallery.intro}</p>
+    </div>
+    <div class="mt-10 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
+      {
+        t.gallery.items.map((item) => (
+          <figure class="overflow-hidden rounded-[1.75rem] bg-white card-shadow">
+            <img
+              src={images[item.image].src}
+              alt={item.alt}
+              width={images[item.image].width}
+              height={images[item.image].height}
+              loading="lazy"
+              class="aspect-[4/3] w-full object-cover"
+            />
+            <figcaption class="p-5 text-sm text-[#17352a]/65">{item.caption}</figcaption>
+          </figure>
+        ))
+      }
+    </div>
+  </div>
+</section>

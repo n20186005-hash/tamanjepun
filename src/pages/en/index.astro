@@ -1,0 +1,19 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import HomePage from '../../components/HomePage.astro';
+import en from '../../content/en';
+import { FACTS } from '../../data/site';
+import { homeJsonLd } from '../../lib/page';
+---
+
+<BaseLayout
+  locale="en"
+  route="home"
+  title={en.meta.title}
+  description={en.meta.description}
+  ogImage={FACTS.images.garden.src}
+  preloadImage={FACTS.images.garden.src}
+  jsonLd={homeJsonLd(Astro.site, 'en', en)}
+>
+  <HomePage locale="en" t={en} />
+</BaseLayout>

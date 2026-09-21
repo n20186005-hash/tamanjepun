@@ -1,0 +1,10 @@
+---
+import ArticleBody from './ArticleBody.astro';
+import type { Locale } from '../i18n';
+import type { ArticleKey, Content } from '../content/types';
+
+const { locale, t, articleKey } = Astro.props as { locale: Locale; t: Content; articleKey: ArticleKey };
+const article = t.articles[articleKey];
+---
+
+<ArticleBody locale={locale} t={t} article={article} />

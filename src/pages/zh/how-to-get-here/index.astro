@@ -1,0 +1,18 @@
+---
+import BaseLayout from '../../../layouts/BaseLayout.astro';
+import GuidePage from '../../../components/GuidePage.astro';
+import zh from '../../../content/zh';
+import { FACTS } from '../../../data/site';
+import { articleJsonLd } from '../../../lib/page';
+---
+
+<BaseLayout
+  locale="zh"
+  route="transport"
+  title={zh.articles.transport.title}
+  description={zh.articles.transport.description}
+  ogImage={FACTS.images.colmar.src}
+  jsonLd={articleJsonLd(Astro.site, 'zh', zh, 'transport')}
+>
+  <GuidePage locale="zh" t={zh} articleKey="transport" />
+</BaseLayout>

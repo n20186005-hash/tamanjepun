@@ -1,0 +1,28 @@
+---
+import type { Content } from '../../content/types';
+
+const { t } = Astro.props as { t: Content };
+---
+
+<section id="makan" class="bg-[#17352a] py-16 text-white lg:py-24">
+  <div class="mx-auto max-w-7xl px-5 lg:px-8">
+    <div class="flex flex-col justify-between gap-5 md:flex-row md:items-end">
+      <div>
+        <p class="text-xs font-black uppercase tracking-[.24em] text-[#d8bc7a]">{t.food.eyebrow}</p>
+        <h2 class="serif mt-4 text-4xl font-bold sm:text-5xl">{t.food.h2}</h2>
+      </div>
+      <p class="max-w-xl text-sm leading-6 text-white/62">{t.food.intro}</p>
+    </div>
+    <div class="mt-10 grid gap-5 md:grid-cols-3">
+      {
+        t.food.items.map((food, i) => (
+          <article class="rounded-3xl border border-white/12 bg-white/5 p-6">
+            <div class="mb-10 text-xs font-black tracking-[.2em] text-[#d8bc7a]">0{i + 1}</div>
+            <h3 class="text-xl font-black">{food.name}</h3>
+            <p class="mt-3 text-sm leading-6 text-white/68">{food.note}</p>
+          </article>
+        ))
+      }
+    </div>
+  </div>
+</section>

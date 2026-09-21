@@ -1,0 +1,93 @@
+---
+import { FACTS, reviewCountLabel } from '../data/site';
+import { locales, localeMeta, pathFor, type Locale, type RouteKey } from '../i18n';
+import type { Content } from '../content/types';
+
+interface Props {
+  locale: Locale;
+  route: RouteKey;
+  t: Content;
+}
+
+const { locale, route, t } = Astro.props;
+
+const guides = [
+  { key: 'home' as RouteKey, label: t.nav.home },
+  { key: 'tickets' as RouteKey, label: t.articles.tickets.nav },
+  { key: 'transport' as RouteKey, label: t.articles.transport.nav },
+  { key: 'photos' as RouteKey, label: t.articles.photos.nav }
+];
+---
+
+<footer class="border-t border-[#17352a]/10 bg-[#efe8da] py-12">
+  <div class="mx-auto grid max-w-7xl gap-10 px-5 lg:grid-cols-[1.4fr_1fr_1fr] lg:px-8">
+    <div>
+      <img src="/brand/logo.svg" alt={t.brand} width="210" height="48" class="h-14 w-auto" />
+      <p class="mt-4 max-w-md text-sm leading-7 text-[#17352a]/65">{t.footer.about}</p>
+      <p class="mt-3 max-w-md text-xs leading-6 text-[#17352a]/50">{t.footer.disclaimer}</p>
+    </div>
+
+    <div>
+      <h2 class="text-xs font-black uppercase tracking-[.2em] text-[#a63d2f]">{t.footer.infoTitle}</h2>
+      <address class="mt-4 space-y-2 text-sm not-italic leading-7 text-[#17352a]/70">
+        <p class="font-bold text-[#17352a]">{FACTS.name}</p>
+        <p>{FACTS.address.streetAddress}</p>
+        <p>{FACTS.address.postalCode} {FACTS.address.addressLocality}, {FACTS.address.addressRegion}, Malaysia</p>
+        <p>{t.footer.phoneLabel}: <a class="focus-ring rounded underline hover:text-[#a63d2f]" href={`tel:${FACTS.phoneHref}`}>{FACTS.phone}</a></p>
+        <p>{t.footer.hoursLabel}: {FACTS.openingHours}</p>
+      </address>
+      <a
+        href={FACTS.mapsUrl}
+        target="_blank"
+        rel="noopener noreferrer"
+        class="focus-ring mt-4 inline-flex rounded-full border border-[#17352a]/20 px-4 py-2 text-sm font-bold hover:bg-[#17352a] hover:text-white"
+      >
+        {t.nav.map} ↗
+      </a>
+
+      <h2 class="mt-8 text-xs font-black uppercase tracking-[.2em] text-[#a63d2f]">{t.footer.exploreTitle}</h2>
+      <ul class="mt-3 space-y-1.5 text-sm">
+        {
+          guides.map((item) => (
+            <li>
+              <a class="focus-ring rounded underline decoration-transparent hover:text-[#a63d2f] hover:decoration-current" href={pathFor(item.key, locale)}>
+                {item.label}
+              </a>
+            </li>
+          ))
+        }
+      </ul>
+    </div>
+
+    <div>
+      <h2 class="text-xs font-black uppercase tracking-[.2em] text-[#a63d2f]">{t.footer.ratingTitle}</h2>
+      <p class="mt-4 text-3xl font-black">{FACTS.ratingValue} <span class="text-base font-bold text-[#17352a]/50">/ 5</span></p>
+      <p class="mt-1 text-sm text-[#17352a]/70">{reviewCountLabel} {t.labels.reviews}</p>
+      <p class="mt-3 text-xs leading-6 text-[#17352a]/50">{t.footer.ratingNote}</p>
+
+      <h2 class="mt-8 text-xs font-black uppercase tracking-[.2em] text-[#a63d2f]">{t.footer.languageLabel}</h2>
+      <ul class="mt-3 flex flex-wrap gap-2 text-sm">
+        {
+          locales.map((l) => (
+            <li>
+              <a
+                class:list={[
+                  'focus-ring rounded-full border px-3 py-1 font-semibold',
+                  l === locale ? 'border-[#17352a] bg-[#17352a] text-white' : 'border-[#17352a]/20 hover:bg-[#17352a]/5'
+                ]}
+                href={pathFor(route, l)}
+                hreflang={localeMeta[l].hreflang}
+                lang={localeMeta[l].htmlLang}
+              >
+                {localeMeta[l].shortLabel}
+              </a>
+            </li>
+          ))
+        }
+      </ul>
+    </div>
+  </div>
+  <div class="mx-auto mt-10 max-w-7xl border-t border-[#17352a]/10 px-5 pt-6 text-xs text-[#17352a]/45 lg:px-8">
+    {t.footer.bottom}
+  </div>
+</footer>

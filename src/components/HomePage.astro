@@ -1,0 +1,31 @@
+---
+import Hero from './sections/Hero.astro';
+import About from './sections/About.astro';
+import Gallery from './sections/Gallery.astro';
+import Plan from './sections/Plan.astro';
+import Transport from './sections/Transport.astro';
+import Food from './sections/Food.astro';
+import Nearby from './sections/Nearby.astro';
+import MapSection from './sections/MapSection.astro';
+import Faq from './sections/Faq.astro';
+import Closing from './sections/Closing.astro';
+import Explore from './Explore.astro';
+import type { Locale } from '../i18n';
+import type { Content } from '../content/types';
+
+const { locale, t } = Astro.props as { locale: Locale; t: Content };
+---
+
+<main id="atas">
+  <Hero t={t} />
+  <About t={t} />
+  <Gallery t={t} />
+  <Plan t={t} />
+  <Transport t={t} />
+  <Food t={t} />
+  <Nearby t={t} />
+  <MapSection t={t} />
+  <Explore locale={locale} t={t} />
+  <Faq t={t} />
+  <Closing t={t} />
+</main>

@@ -1,0 +1,77 @@
+---
+import { FACTS } from '../data/site';
+import { locales, localeMeta, pathFor, type Locale, type RouteKey } from '../i18n';
+import type { Content } from '../content/types';
+
+interface Props {
+  locale: Locale;
+  route: RouteKey;
+  t: Content;
+}
+
+const { locale, route, t } = Astro.props;
+
+const nav = [
+  { key: 'home' as RouteKey, label: t.nav.home },
+  { key: 'tickets' as RouteKey, label: t.nav.tickets },
+  { key: 'photos' as RouteKey, label: t.nav.photos },
+  { key: 'transport' as RouteKey, label: t.nav.transport }
+];
+
+const homeHref = pathFor('home', locale);
+---
+
+<header class="fixed inset-x-0 top-0 z-50 border-b border-white/10 bg-[#17352a]/90 backdrop-blur-xl">
+  <div class="mx-auto flex max-w-7xl items-center justify-between gap-3 px-5 py-3 lg:px-8">
+    <a href={homeHref} class="focus-ring rounded-lg" aria-label={t.brand}>
+      <img src="/brand/logo.svg" alt={t.brand} class="h-10 w-auto brightness-[4] grayscale sm:h-12" width="210" height="48" />
+    </a>
+
+    <nav class="hidden items-center gap-5 text-sm font-semibold text-[#f5f0e5] lg:flex" aria-label={t.nav.home}>
+      {
+        nav.map((item) => (
+          <a
+            class:list={[
+              'focus-ring rounded hover:text-[#d8bc7a]',
+              route === item.key ? 'text-[#d8bc7a] underline decoration-[#d8bc7a] decoration-2 underline-offset-8' : ''
+            ]}
+            href={pathFor(item.key, locale)}
+            aria-current={route === item.key ? 'page' : undefined}
+          >
+            {item.label}
+          </a>
+        ))
+      }
+      <a class="focus-ring rounded hover:text-[#d8bc7a]" href={`${homeHref}#faq`}>{t.nav.faq}</a>
+    </nav>
+
+    <div class="flex items-center gap-2">
+      <div class="flex items-center gap-1 rounded-full border border-white/20 px-1 py-1" aria-label={t.labels.langSwitch}>
+        {
+          locales.map((l) => (
+            <a
+              class:list={[
+                'focus-ring rounded-full px-2.5 py-1 text-xs font-bold transition',
+                l === locale ? 'bg-[#d8bc7a] text-[#17352a]' : 'text-[#f5f0e5] hover:bg-white/10'
+              ]}
+              href={pathFor(route, l)}
+              hreflang={localeMeta[l].hreflang}
+              lang={localeMeta[l].htmlLang}
+              aria-current={l === locale ? 'true' : undefined}
+            >
+              {localeMeta[l].shortLabel}
+            </a>
+          ))
+        }
+      </div>
+      <a
+        href={FACTS.mapsUrl}
+        rel="noopener noreferrer"
+        target="_blank"
+        class="focus-ring hidden rounded-full border border-[#d8bc7a]/60 px-4 py-2 text-sm font-bold text-[#f5f0e5] hover:bg-[#f5f0e5] hover:text-[#17352a] sm:inline-block"
+      >
+        {t.nav.map} ↗
+      </a>
+    </div>
+  </div>
+</header>

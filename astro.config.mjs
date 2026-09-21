@@ -9,7 +9,22 @@ const site = 'https://tamanjepun.com';
 export default defineConfig({
   site: site || undefined,
   output: 'static',
-  integrations: site ? [sitemap()] : [],
+  integrations: site
+    ? [
+        sitemap({
+          // Sitemap turut menerbitkan xhtml:link alternates supaya Google tahu
+          // / , /en/ dan /zh/ ialah tiga versi bahasa bagi halaman yang sama.
+          i18n: {
+            defaultLocale: 'ms',
+            locales: {
+              ms: 'ms-MY',
+              en: 'en-MY',
+              zh: 'zh-Hans'
+            }
+          }
+        })
+      ]
+    : [],
   vite: {
     plugins: [tailwindcss()]
   }

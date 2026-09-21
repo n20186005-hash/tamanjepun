@@ -1,0 +1,18 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import GuidePage from '../../components/GuidePage.astro';
+import ms from '../../content/ms';
+import { FACTS } from '../../data/site';
+import { articleJsonLd } from '../../lib/page';
+---
+
+<BaseLayout
+  locale="ms"
+  route="tickets"
+  title={ms.articles.tickets.title}
+  description={ms.articles.tickets.description}
+  ogImage={FACTS.images.garden.src}
+  jsonLd={articleJsonLd(Astro.site, 'ms', ms, 'tickets')}
+>
+  <GuidePage locale="ms" t={ms} articleKey="tickets" />
+</BaseLayout>

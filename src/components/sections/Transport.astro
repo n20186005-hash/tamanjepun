@@ -1,0 +1,30 @@
+---
+import type { Content } from '../../content/types';
+
+const { t } = Astro.props as { t: Content };
+---
+
+<section id="pengangkutan" class="py-16 lg:py-24">
+  <div class="mx-auto max-w-7xl px-5 lg:px-8">
+    <div class="grid gap-10 lg:grid-cols-[.8fr_1.2fr]">
+      <div class="lg:sticky lg:top-24 lg:self-start">
+        <p class="text-xs font-black uppercase tracking-[.24em] text-[#a63d2f]">{t.transport.eyebrow}</p>
+        <h2 class="serif mt-4 text-4xl font-bold sm:text-5xl">{t.transport.h2}</h2>
+        <p class="mt-5 leading-7 text-[#17352a]/70">{t.transport.intro}</p>
+      </div>
+      <div class="divide-y divide-[#17352a]/10 overflow-hidden rounded-[2rem] border border-[#17352a]/10 bg-white">
+        {
+          t.transport.items.map((item) => (
+            <article class="grid gap-4 p-6 sm:grid-cols-[150px_1fr] sm:p-8">
+              <h3 class="font-black">{item.title}</h3>
+              <div>
+                <p class="leading-7 text-[#17352a]/72">{item.text}</p>
+                {item.note ? <p class="mt-2 text-sm text-[#17352a]/50">{item.note}</p> : null}
+              </div>
+            </article>
+          ))
+        }
+      </div>
+    </div>
+  </div>
+</section>
