@@ -2,16 +2,16 @@ import type { Content } from './types';
 
 export const content: Content = {
   meta: {
-    title: 'Taman Jepun Bukit Tinggi | Tiket RM14, Waktu & Tips 2026',
+    title: "Taman Jepun Bukit Tinggi | Tiket, Foto & Cara Ke Sana",
     description:
-      'Tiket Taman Jepun Bukit Tinggi dari RM14, waktu operasi 08:00–22:00. Panduan sewa kimono, rumah teh Jepun, parkir, cara ke sana & peta lokasi.'
+      "Panduan Taman Jepun / Japanese Garden di Bukit Tinggi, Bentong: semakan tiket, waktu senarai peta, foto, kimono, parkir dan perjalanan pulang."
   },
   siteName: 'Panduan Taman Jepun Bukit Tinggi',
   brand: 'Taman Jepun Bukit Tinggi',
   nav: { home: 'Utama', tickets: 'Tiket', photos: 'Foto', transport: 'Pengangkutan', faq: 'FAQ', map: 'Peta' },
   hero: {
     badge: 'Japanese Village · Bukit Tinggi',
-    rating: '★ 4.0 · 9,930 ulasan',
+    rating: '★ 4.0 · 9,938 ulasan',
     h1Lead: 'Taman Jepun',
     h1Accent: 'Bukit Tinggi.',
     lede: 'Taman Jepun (Japanese Village / Japanese Garden) di Bukit Tinggi, Bentong, Pahang: kolam koi, taman batu, rumah teh Jepun dan sewaan kimono dalam hutan tanah tinggi yang tenang.',
@@ -20,17 +20,31 @@ export const content: Content = {
     strip: 'Bentong · Pahang · Malaysia',
     imageAlt: 'Kolam koi dan jambatan batu di Taman Jepun Bukit Tinggi, Bentong',
     stats: [
-      { label: 'Penilaian', value: '4.0 / 5', note: '9,930 ulasan' },
-      { label: 'Waktu operasi', value: '08:00–22:00' },
-      { label: 'Tiket masuk', value: 'Dari RM14' },
-      { label: 'Medan', value: 'Tangga & cerun' }
-    ]
+  {
+    "label": "Snapshot Google Maps",
+    "value": "4.0 / 5",
+    "note": "9,938 · 19 Oktober 2026"
+  },
+  {
+    "label": "Waktu senarai peta",
+    "value": "08:00–22:00",
+    "note": "Senarai Google Maps; aktiviti mungkin tutup lebih awal"
+  },
+  {
+    "label": "Tiket",
+    "value": "Sahkan harga semasa"
+  },
+  {
+    "label": "Medan",
+    "value": "Tangga & cerun"
+  }
+]
   },
   about: {
     eyebrow: 'Tentang tempat ini',
     h2: 'Taman Jepun dalam hutan hujan Pahang.',
     paras: [
-      'Japanese Village — juga dirujuk sebagai Japanese Garden Bukit Tinggi atau “rumah Jepun Bukit Tinggi” — ialah himpunan tarikan bertema Jepun di Berjaya Hills, kira-kira lima minit dengan kereta atau shuttle dari Colmar Tropicale.',
+      "Panduan ini merujuk pin Japanese Garden / Taman Jepun di Bukit Tinggi, Bentong, Pahang, bukan Taman Jepun di Muar. Senarai Japanese Village dan Colmar Tropicale mempunyai maklumat tersendiri; jangan gabungkan rating atau waktunya.",
       'Elemen utamanya ialah kolam koi, batu taman, aliran air, rumah teh Jepun, sewaan kimono untuk bergambar serta laluan hijau yang bersambung dengan Botanical Garden. Kedudukannya di tanah tinggi membuatkan suhu lebih nyaman berbanding Kuala Lumpur.',
       'Ramai pelawat datang kerana dua sebab: suasana yang tenang dan fotografi. Jika anda mencari “taman Jepun” yang lengkap dengan bunga sakura atau taman tema sepenuh hari, sesuaikan jangkaan — daya tarik di sini ialah laluan air, batu dan seni bina kayu.'
     ],
@@ -65,13 +79,25 @@ export const content: Content = {
       h3: 'Harga Tiket Taman Jepun Bukit Tinggi',
       badge: 'RM',
       rows: [
-        { label: 'Dewasa', value: 'RM14' },
-        { label: 'Kanak-kanak 4–12 tahun', value: 'RM7' },
-        { label: 'Waktu operasi', value: '08:00 – 22:00 setiap hari' },
-        { label: 'Sewaan kimono / yukata', value: 'Caj berasingan' }
-      ],
-      note: 'Harga di atas ialah tiket masuk Colmar Tropicale menurut FAQ operator, dan ia termasuk akses ke Japanese Village (Taman Jepun). Aktiviti tambahan seperti sewaan kimono/yukata, rumah teh Jepun atau pengalaman tertentu boleh dikenakan caj berasingan.',
-      disclaimer: 'Harga, waktu dan kemudahan boleh berubah. Semak dengan operator sebelum perjalanan, terutama jika lawatan anda bergantung pada rumah teh, spa atau shuttle.'
+  {
+    "label": "Tiket dewasa",
+    "value": "Sahkan dengan operator"
+  },
+  {
+    "label": "Tiket kanak-kanak dan had umur",
+    "value": "Sahkan dengan operator"
+  },
+  {
+    "label": "Senarai peta taman",
+    "value": "08:00–22:00; aktiviti berbeza"
+  },
+  {
+    "label": "Kimono / pengalaman teh",
+    "value": "Sahkan harga dan ketersediaan"
+  }
+],
+      note: "Harga masuk semasa dan skop akses belum dapat disahkan dengan operator pada 19 Oktober 2026. Tanya Colmar Tropicale / Berjaya Hills tentang tiket dewasa, kanak-kanak, had umur dan sama ada akses Japanese Village, parkir atau pengangkutan termasuk. Angka lama RM14 / RM7 tidak dipaparkan sebagai harga semasa.",
+      disclaimer: "Senarai Japanese Garden yang dipautkan menunjukkan 08:00–22:00 setiap hari pada 19 Oktober 2026. Ini bukan pengesahan waktu rumah teh, kimono, shuttle atau aktiviti Japanese Village. Sahkan waktu masuk terakhir dan perjalanan pulang dengan operator; rancang lawatan pada siang hari."
     },
     parking: {
       eyebrow: 'Parkir',
@@ -90,23 +116,26 @@ export const content: Content = {
     intro:
       'Japanese Garden berada di kawasan bukit, jadi bahagian akhir perjalanan biasanya memerlukan kereta, teksi/e-hailing atau shuttle resort.',
     items: [
-      { title: 'Dari Kuala Lumpur', text: 'Laluan paling lazim ialah Lebuhraya Karak (E8) ke arah Bentong, kemudian naik ke Bukit Tinggi melalui jalan kampung yang berliku. Kira-kira 1 jam hingga 1 jam 30 minit bergantung trafik.', note: 'Isi minyak dan makan sebelum naik; pilihan di atas bukit lebih terhad.' },
-      { title: 'Dari KLIA', text: 'Pilihan paling mudah ialah teksi/e-hailing terus ke Berjaya Hills. Untuk mengurangkan kos, ambil KLIA Ekspres/transit ke KL Sentral, kemudian sambung dengan e-hailing atau ke titik shuttle resort di Kuala Lumpur.', note: 'Perjalanan jalan raya lazimnya sekitar 1½–2 jam, bergantung trafik dan cuaca.' },
-      { title: 'Bas / shuttle', text: 'Tiada bas awam yang berhenti terus di pintu taman. Semak shuttle Colmar Tropicale dari Kuala Lumpur (tempahan awal disyorkan), atau naik bas ke Bentong dan sambung dengan teksi/e-hailing ke Bukit Tinggi.', note: 'Jika menggunakan shuttle resort, sahkan waktu balik supaya tidak terlepas perjalanan turun.' },
-      { title: 'Teksi / e-hailing', text: 'Grab, teksi atau pemandu sewa sesuai untuk perjalanan dari Kuala Lumpur, Bentong atau Genting. Liputan e-hailing untuk perjalanan pulang dari kawasan bukit boleh tidak konsisten.', note: 'Atur masa ambil atau simpan nombor pemandu lebih awal.' },
-      { title: 'Dari Colmar & Genting', text: 'Japanese Village terletak kira-kira lima minit dengan kereta atau shuttle dari Colmar Tropicale. Dari Genting Highlands, perjalanan merentasi jalan bukit mengambil masa lebih kurang 30–45 minit.', note: 'Gabungkan kedua-duanya dalam satu hari jika anda sudah berada di Berjaya Hills.' }
-    ]
+  {
+    "title": "Dari Kuala Lumpur / KLIA",
+    "text": "Gunakan arah peta semasa dari Kuala Lumpur ke pin taman di Berjaya Hills melalui laluan Karak/Bukit Tinggi. Beri masa untuk trafik, cuaca dan berjalan mendaki; masa perjalanan tetap tidak dijanjikan."
+  },
+  {
+    "title": "Bas / shuttle",
+    "text": "Jadual shuttle Kuala Lumpur semasa dan perkhidmatan bas terus belum disahkan. Semak ketersediaan, lokasi jemputan, tempahan dan perjalanan pulang terakhir dengan resort sebelum bergantung pada shuttle. Kereta sendiri atau pemandu yang ditempah awal ialah pilihan lain."
+  },
+  {
+    "title": "Perjalanan pulang",
+    "text": "Atur jemputan pulang sebelum bertolak. Sahkan pemandu, tempat bertemu dan cara menghubungi; jangan bergantung pada shuttle petang atau e-hailing yang belum disahkan."
+  }
+]
   },
   food: {
     eyebrow: 'Sekitar Bukit Tinggi',
     h2: 'Makan selepas berjalan.',
     intro:
-      'Kampung Bukit Tinggi terkenal dengan kedai makan keluarga, masakan Cina tempatan dan hidangan berasaskan halia Bentong. Semak status halal mengikut keperluan anda.',
-    items: [
-      { name: 'Gather By The Hill Local Delight', note: 'Pilihan santai untuk sarapan, mi dan hidangan tempatan; sesuai singgah sebelum atau selepas naik ke kawasan resort.' },
-      { name: 'Restoran Remember Me 126', note: 'Restoran Cina gaya keluarga di Kampung Bukit Tinggi, sesuai untuk hidangan berkongsi dan makan tengah hari selepas lawatan.' },
-      { name: 'Restoran River Bay', note: 'Pilihan makan tepi sungai dengan hidangan gaya Cina dan makanan laut; suasana lebih santai untuk makan lewat tengah hari.' }
-    ]
+      "Pilih restoran yang dibuka di sepanjang laluan sebenar anda. Semak menu, harga dan keperluan pemakanan sebelum memesan.",
+    items: []
   },
   nearby: {
     eyebrow: 'Tarikan berdekatan',
@@ -137,16 +166,16 @@ export const content: Content = {
     eyebrow: 'FAQ',
     h2: 'Soalan biasa sebelum naik bukit.',
     items: [
-      { q: 'Berapa harga tiket masuk Taman Jepun Bukit Tinggi?', a: 'Maklumat operator menyenaraikan tiket masuk Colmar Tropicale pada RM14 dewasa dan RM7 kanak-kanak 4–12 tahun, dan tiket ini merangkumi akses ke Japanese Village (Taman Jepun). Sewaan kimono/yukata, rumah teh dan aktiviti tertentu mungkin dikenakan caj berasingan. Harga boleh berubah — semak dengan operator sebelum perjalanan.' },
-      { q: 'Pukul berapa waktu operasi Taman Jepun Bukit Tinggi?', a: 'Waktu operasi yang tersenarai ialah 08:00 hingga 22:00 setiap hari. Waktu ini boleh berubah mengikut musim, cuaca atau acara, jadi sahkan dengan operator terutama jika anda merancang lawatan lewat petang.' },
+      { q: 'Berapa harga tiket masuk Taman Jepun Bukit Tinggi?', a: "Harga masuk semasa dan skop akses belum dapat disahkan dengan operator pada 19 Oktober 2026. Tanya Colmar Tropicale / Berjaya Hills tentang tiket dewasa, kanak-kanak, had umur dan sama ada akses Japanese Village, parkir atau pengangkutan termasuk. Angka lama RM14 / RM7 tidak dipaparkan sebagai harga semasa." },
+      { q: 'Pukul berapa waktu operasi Taman Jepun Bukit Tinggi?', a: "Senarai Japanese Garden yang dipautkan menunjukkan 08:00–22:00 setiap hari pada 19 Oktober 2026. Ini bukan pengesahan waktu rumah teh, kimono, shuttle atau aktiviti Japanese Village. Sahkan waktu masuk terakhir dan perjalanan pulang dengan operator; rancang lawatan pada siang hari." },
       { q: 'Berapa lama sesuai diperuntukkan di Taman Jepun?', a: 'Kebanyakan pelawat selesa memperuntukkan sekitar 1 hingga 2 jam untuk taman, kolam koi, foto dan laluan berbukit. Tambah masa jika anda mahu meneruskan ke Botanical Garden.' },
       { q: 'Adakah Taman Jepun sesuai untuk warga emas atau kerusi roda?', a: 'Laluan masuk mempunyai tangga, cerun dan permukaan batu yang boleh licin selepas hujan. Ia kurang sesuai untuk kerusi roda dan mungkin mencabar bagi pelawat dengan mobiliti terhad.' },
       { q: 'Adakah sewaan kimono dan rumah teh Jepun tersedia?', a: 'Kawasan Japanese Village menampilkan rumah teh Jepun, taman batu dan kolam koi, dengan sewaan kimono/yukata yang lazim ditawarkan untuk bergambar. Ketersediaan bergantung pada operator dan boleh dikenakan caj berasingan.' },
-      { q: 'Boleh datang tanpa kereta?', a: 'Boleh, tetapi pilihan lebih terhad. Dari Kuala Lumpur, semak shuttle resort atau gunakan bas ke Bentong diikuti teksi/e-hailing. Dari Colmar Tropicale, Japanese Village hanya beberapa minit dengan shuttle atau kenderaan.' },
+      { q: 'Boleh datang tanpa kereta?', a: "Jadual shuttle Kuala Lumpur semasa dan perkhidmatan bas terus belum disahkan. Semak ketersediaan, lokasi jemputan, tempahan dan perjalanan pulang terakhir dengan resort sebelum bergantung pada shuttle. Kereta sendiri atau pemandu yang ditempah awal ialah pilihan lain." },
       { q: 'Bila masa terbaik untuk bergambar?', a: 'Datang awal pagi untuk udara lebih nyaman dan cahaya lembut. Hari bekerja biasanya lebih tenang. Selepas hujan, batu dan tangga boleh licin, jadi gunakan kasut yang mencengkam.' },
-      { q: 'Adakah tiket berasingan diperlukan?', a: 'Maklumat operator menyatakan tiket masuk kawasan Colmar Tropicale merangkumi akses ke Japanese Village dan beberapa tarikan berkaitan. Harga dan skop akses boleh berubah, jadi semak dengan operator sebelum perjalanan.' },
-      { q: 'Di mana lokasi tepat Taman Jepun untuk dituju dengan Waze/Google Maps?', a: 'Gunakan alamat Jln Bukit Tinggi, Bukit Tinggi, 28750 Bentong, Pahang, atau koordinat 3.4190, 101.8401. Pintu masuk berada dalam kawasan Berjaya Hills, kira-kira lima minit dari Colmar Tropicale.' },
-      { q: 'Adakah Taman Jepun sama dengan French Village Bukit Tinggi?', a: 'Tidak. French Village ialah gelaran untuk Colmar Tropicale, manakala Taman Jepun (Japanese Village) ialah tarikan bertema Jepun yang berasingan. Kedua-duanya berada dalam kawasan Berjaya Hills, kira-kira lima minit antara satu sama lain.' }
+      { q: 'Adakah tiket berasingan diperlukan?', a: "Tanya sama ada tiket meliputi Japanese Garden, Japanese Village dan Colmar Tropicale, serta caj parkir atau pengangkutan resort. Simpan tiket atau resit dan ikut syarat akses yang dicetak." },
+      { q: "Pin peta manakah yang perlu digunakan?", a: "Gunakan pautan Japanese Garden / Taman Jepun dalam panduan ini di Jln Bukit Tinggi, 28750 Bentong, Pahang, sekitar 3.4190112, 101.8426661. Sahkan tempat turun kenderaan secara berasingan; pin tidak menjamin akses tanpa tangga." },
+      { q: "Adakah ini Taman Jepun di Muar?", a: "Panduan ini merujuk pin Japanese Garden / Taman Jepun di Bukit Tinggi, Bentong, Pahang, bukan Taman Jepun di Muar. Senarai Japanese Village dan Colmar Tropicale mempunyai maklumat tersendiri; jangan gabungkan rating atau waktunya." }
     ]
   },
   closing: {
@@ -159,10 +188,10 @@ export const content: Content = {
     disclaimer: 'Laman ini ialah panduan pelawat bebas dan bukan laman rasmi; ia tidak mewakili pengendali Taman Jepun, Berjaya Hills atau mana-mana agensi kerajaan.',
     infoTitle: 'Maklumat lokasi',
     phoneLabel: 'Telefon',
-    hoursLabel: 'Waktu operasi',
-    ratingTitle: 'Penilaian pengunjung',
-    ratingNote: 'Penilaian dan bilangan ulasan diselaraskan daripada Google Maps pada September 2026 dan boleh berubah dari semasa ke semasa.',
-    bottom: 'Bentong, Pahang · Malaysia · Dikemas kini September 2026',
+    hoursLabel: "Waktu senarai peta",
+    ratingTitle: "Snapshot Google Maps",
+    ratingNote: "Snapshot senarai Japanese Garden yang dipautkan, disemak pada 19 Oktober 2026: 4.0/5 daripada 9,938 ulasan. Bukan suapan langsung atau rating senarai Japanese Village yang berasingan.",
+    bottom: "Bentong, Pahang · Disemak 19 Oktober 2026",
     exploreTitle: 'Panduan',
     languageLabel: 'Bahasa'
   },
@@ -171,58 +200,69 @@ export const content: Content = {
       key: 'tickets',
       nav: 'Tiket',
       eyebrow: 'Harga tiket & waktu operasi',
-      title: 'Harga Tiket Taman Jepun Bukit Tinggi 2026 | Dari RM14',
-      description: 'Harga tiket Taman Jepun Bukit Tinggi dari RM14 dewasa & RM7 kanak-kanak, waktu operasi 08:00–22:00. Apa yang termasuk, caj tambahan dan cara menjimatkan masa di kaunter.',
+      title: "Harga Tiket Taman Jepun Bukit Tinggi & Panduan Masuk",
+      description: "Semak tiket Taman Jepun Bukit Tinggi, kategori umur, akses termasuk dan caj kimono. Bezakan waktu senarai peta daripada aktiviti sebelum datang.",
       h1: 'Harga Tiket Taman Jepun Bukit Tinggi',
-      lede: 'Taman Jepun (Japanese Village) terletak dalam kawasan Berjaya Hills, jadi tiket yang anda beli lazimnya ialah tiket masuk Colmar Tropicale yang telah merangkumi akses ke Japanese Village. Berikut ringkasan harga, skop akses dan caj tambahan yang patut anda jangka.',
+      lede: "Sebelum ke Japanese Garden di Berjaya Hills, sahkan pakej masuk semasa dan aktiviti yang anda mahu. Senarai taman, kawasan Japanese Village dan kemudahan resort boleh mempunyai waktu berbeza.",
       factsTitle: 'Ringkasan harga & waktu',
       facts: [
-        { label: 'Dewasa', value: 'RM14' },
-        { label: 'Kanak-kanak 4–12 tahun', value: 'RM7' },
-        { label: 'Waktu operasi', value: '08:00 – 22:00 setiap hari' },
-        { label: 'Sewaan kimono / yukata', value: 'Caj berasingan' },
-        { label: 'Parkir', value: 'Kawasan parkir disediakan' }
-      ],
+  {
+    "label": "Tiket dewasa",
+    "value": "Sahkan dengan operator"
+  },
+  {
+    "label": "Tiket kanak-kanak dan had umur",
+    "value": "Sahkan dengan operator"
+  },
+  {
+    "label": "Senarai peta taman",
+    "value": "08:00–22:00; aktiviti berbeza"
+  },
+  {
+    "label": "Kimono / pengalaman teh",
+    "value": "Sahkan harga dan ketersediaan"
+  }
+],
       sections: [
-        {
-          h2: 'Berapa harga tiket masuk Taman Jepun Bukit Tinggi?',
-          paras: [
-            'Maklumat operator menyenaraikan tiket masuk Colmar Tropicale pada RM14 untuk dewasa dan RM7 untuk kanak-kanak berumur 4–12 tahun, dan tiket ini merangkumi akses ke Japanese Village (Taman Jepun). Harga ini menjadikannya antara tarikan bertema paling berpatutan di kawasan tanah tinggi Pahang.',
-            'Anggaplah angka ini sebagai rujukan, bukan jaminan: harga boleh berubah mengikut musim, acara atau pakej promosi. Jika lawatan anda bergantung pada bajet yang ketat, hubungi operator atau semak laman rasmi mereka pada hari anda berangkat.'
-          ]
-        },
-        {
-          h2: 'Apa yang termasuk dalam tiket?',
-          paras: ['Secara umumnya, tiket yang sama memberi akses kepada beberapa tarikan dalam zon Berjaya Hills. Antara yang lazim dirangkumi:'],
-          bullets: [
-            'Laluan pejalan kaki, kolam koi, taman batu dan air di Japanese Village.',
-            'Ruang rumah teh Jepun serta kawasan foto bertema kayu dan tangga merah.',
-            'Akses ke laluan hijau yang bersambung dengan zon Botanical Garden.',
-            'Kawasan parkir awam di sekitar pendekatan tarikan.'
-          ]
-        },
-        {
-          h2: 'Caj tambahan yang perlu dijangka',
-          paras: ['Beberapa pengalaman tidak termasuk dalam tiket asas dan biasanya dijual berasingan di kaunter atau melalui operator:'],
-          bullets: [
-            'Sewaan kimono atau yukata untuk bergambar.',
-            'Rumah teh Jepun, sesi minum teh atau pengalaman spa tertentu.',
-            'Shuttle resort, aktiviti berpandu atau pakej fotografi.'
-          ]
-        },
-        {
-          h2: 'Waktu operasi & masa terbaik untuk sampai',
-          paras: [
-            'Waktu operasi yang tersenarai ialah 08:00 hingga 22:00 setiap hari. Untuk mengelakkan kekecewaan, sahkan semula waktu ini dengan operator jika anda merancang lawatan lewat petang atau pada musim perayaan.',
-            'Datang lebih awal memberi tiga kelebihan: parkir yang lebih dekat, cahaya yang lebih lembut untuk bergambar, dan laluan yang belum sesak. Hari bekerja biasanya lebih tenang berbanding hujung minggu.'
-          ]
-        }
-      ],
+  {
+    "h2": "Berapakah harga tiket semasa?",
+    "paras": [
+      "Harga semasa belum disahkan pada 19 Oktober 2026. Tanya operator harga untuk tarikh dan kategori pelawat anda, termasuk cukai, had umur dan kaedah bayaran sebelum membeli."
+    ]
+  },
+  {
+    "h2": "Apakah yang termasuk dalam tiket?",
+    "paras": [
+      "Tanya sama ada tiket meliputi Japanese Garden, Japanese Village dan Colmar Tropicale, serta caj parkir atau pengangkutan resort. Simpan tiket atau resit dan ikut syarat akses yang dicetak."
+    ]
+  },
+  {
+    "h2": "Kimono, rumah teh dan caj tambahan",
+    "paras": [
+      "Sahkan jadual aktiviti, tempoh sewaan, saiz pakaian dan caj berasingan. Akses kawasan tidak menjamin semua aktiviti atau kaunter sewaan beroperasi."
+    ]
+  },
+  {
+    "h2": "Waktu taman dan masuk terakhir",
+    "paras": [
+      "Senarai peta taman menunjukkan 08:00–22:00 pada 19 Oktober 2026. Sahkan akses sebenar, masuk terakhir dan perjalanan pulang dengan operator. Jangan gunakan waktu peta untuk merancang aktiviti rumah teh atau kimono pada lewat malam."
+    ]
+  }
+],
       faq: [
-        { q: 'Adakah tiket Taman Jepun dijual berasingan daripada Colmar Tropicale?', a: 'Berdasarkan maklumat operator, tiket masuk Colmar Tropicale telah merangkumi akses ke Japanese Village, jadi anda tidak perlu membeli tiket kedua di pintu taman. Skop akses ini boleh berubah, jadi semak pengumuman terkini sebelum perjalanan.' },
-        { q: 'Adakah kanak-kanak bawah 4 tahun dikenakan bayaran?', a: 'Harga kanak-kanak yang disenaraikan ialah untuk umur 4–12 tahun. Dasar untuk kanak-kanak yang lebih muda bergantung pada operator, jadi tanya terus di kaunter tiket atau melalui saluran rasmi mereka.' },
-        { q: 'Bolehkah bayar dengan kad di kaunter tiket?', a: 'Kebanyakan kaunter di kawasan resort menerima kad, tetapi liputan rangkaian di bukit boleh tidak stabil. Bawa sedikit tunai sebagai sandaran supaya perjalanan anda tidak tergendala.' }
-      ],
+  {
+    "q": "Adakah tiket merangkumi Japanese Village?",
+    "a": "Sahkan pakej semasa dengan operator dan baca syarat tiket. Skop pakej terkini belum disahkan oleh panduan ini."
+  },
+  {
+    "q": "Adakah kanak-kanak bawah empat tahun membayar?",
+    "a": "Had umur dan dasar kemasukan bayi semasa belum disahkan. Tanya operator sebelum membeli."
+  },
+  {
+    "q": "Bolehkah membayar dengan kad?",
+    "a": "Sahkan kaedah bayaran dengan operator atau kaunter. Jangan anggap semua kaunter dan aktiviti menerima kaedah yang sama."
+  }
+],
       related: [
         { key: 'transport', label: 'Cara ke Taman Jepun Bukit Tinggi' },
         { key: 'photos', label: 'Foto & sewaan kimono' },
@@ -239,57 +279,44 @@ export const content: Content = {
       lede: 'Bahagian terakhir perjalanan ke Taman Jepun (Japanese Village) ialah jalan bukit yang berliku di Berjaya Hills. Panduan ini merangkumi semua laluan utama serta perkara yang perlu dirancang lebih awal supaya anda tidak terkandas selepas lawatan.',
       factsTitle: 'Ringkasan perjalanan',
       facts: [
-        { label: 'Alamat', value: 'Jln Bukit Tinggi, 28750 Bentong, Pahang' },
-        { label: 'Dari Kuala Lumpur', value: '± 1 jam – 1 jam 30 minit' },
-        { label: 'Dari KLIA', value: '± 1 jam 30 minit – 2 jam' },
-        { label: 'Jalan terakhir', value: 'Tangga & cerun dari parkir' },
-        { label: 'Koordinat', value: '3.4190, 101.8401' }
-      ],
+  {
+    "label": "Alamat",
+    "value": "Jln Bukit Tinggi, 28750 Bentong, Pahang"
+  },
+  {
+    "label": "Koordinat",
+    "value": "3.4190112, 101.8426661"
+  },
+  {
+    "label": "Masa perjalanan",
+    "value": "Semak laluan semasa"
+  }
+],
       sections: [
-        {
-          h2: 'Dari Kuala Lumpur dengan kereta',
-          paras: [
-            'Laluan paling lazim ialah Lebuhraya Karak (E8) menuju Bentong, diikuti jalan negeri yang mendaki ke Bukit Tinggi. Kira-kira 1 jam hingga 1 jam 30 minit dari pusat Kuala Lumpur, bergantung pada trafik dan cuaca.',
-            'Isi minyak dan makan sebelum mendaki; pilihan di atas bukit lebih terhad dan harga cenderung lebih tinggi. Simpan peta luar talian kerana liputan data boleh hilang di selekoh tertentu.'
-          ]
-        },
-        {
-          h2: 'Dari KLIA',
-          paras: [
-            'Pilihan paling mudah ialah teksi atau e-hailing terus ke Berjaya Hills. Untuk mengurangkan kos, ambil KLIA Ekspres atau transit ke KL Sentral, kemudian sambung dengan e-hailing ke Bukit Tinggi atau ke titik berlepas shuttle resort di Kuala Lumpur.',
-            'Jika penerbangan anda mendarat lewat malam, pertimbangkan untuk bermalam di Bentong atau Kuala Lumpur dan mendaki keesokan pagi — jalan bukit lebih mudah dinavigasi pada waktu siang.'
-          ]
-        },
-        {
-          h2: 'Bas & shuttle',
-          paras: [
-            'Tiada bas awam yang berhenti terus di pintu taman. Dua pilihan yang realistik ialah shuttle resort (tempahan awal sangat disyorkan) atau bas ekspres ke Bentong diikuti teksi/e-hailing ke Bukit Tinggi.',
-            'Jika anda menggunakan shuttle, sahkan waktu perjalanan balik pada hari yang sama. Perkhidmatan di kawasan ini biasanya terhad dan terlepas shuttle terakhir boleh memaksa anda mengatur kenderaan lain dengan kos lebih tinggi.'
-          ]
-        },
-        {
-          h2: 'Teksi / e-hailing & perjalanan pulang',
-          paras: [
-            'Grab, teksi atau pemandu sewa sesuai untuk perjalanan dari Kuala Lumpur, Bentong atau Genting. Liputan pemandu untuk perjalanan pulang dari kawasan bukit bagaimanapun boleh tidak konsisten, terutama selepas hujan lebat.',
-            'Atur masa ambil lebih awal atau simpan nombor pemandu yang membawa anda naik. Ramai pelawat yang selesa berkongsi kenderaan dengan pengunjung lain untuk mengurangkan kos dan masa menunggu.'
-          ],
-          bullets: [
-            'Semak liputan telefon sebelum bergantung pada aplikasi e-hailing.',
-            'Rancang perjalanan turun sebelum waktu Maghrib jika anda mahu elak memandu dalam gelap.',
-            'Simpan nombor teksi tempatan Bentong sebagai sandaran.'
-          ]
-        },
-        {
-          h2: 'Dari Genting Highlands & Colmar Tropicale',
-          paras: [
-            'Dari Colmar Tropicale, Japanese Village hanya kira-kira lima minit dengan kereta atau shuttle — ini cara paling mudah jika anda sudah berada dalam kawasan Berjaya Hills.',
-            'Dari Genting Highlands, perjalanan merentasi jalan bukit mengambil masa lebih kurang 30–45 minit. Gandingkan kedua-dua tarikan ini dalam satu hari jika anda bermalam di kawasan tanah tinggi.'
-          ]
-        }
-      ],
+  {
+    "h2": "Lokasi dan tempat turun",
+    "paras": [
+      "Gunakan pautan Japanese Garden / Taman Jepun dalam panduan ini di Jln Bukit Tinggi, 28750 Bentong, Pahang, sekitar 3.4190112, 101.8426661. Sahkan tempat turun kenderaan secara berasingan; pin tidak menjamin akses tanpa tangga.",
+      "Panduan ini merujuk pin Japanese Garden / Taman Jepun di Bukit Tinggi, Bentong, Pahang, bukan Taman Jepun di Muar. Senarai Japanese Village dan Colmar Tropicale mempunyai maklumat tersendiri; jangan gabungkan rating atau waktunya."
+    ]
+  },
+  {
+    "h2": "Laluan Kuala Lumpur / KLIA",
+    "paras": [
+      "Gunakan arah peta semasa dari Kuala Lumpur ke pin taman di Berjaya Hills melalui laluan Karak/Bukit Tinggi. Beri masa untuk trafik, cuaca dan berjalan mendaki; masa perjalanan tetap tidak dijanjikan."
+    ]
+  },
+  {
+    "h2": "Shuttle dan pulang",
+    "paras": [
+      "Jadual shuttle Kuala Lumpur semasa dan perkhidmatan bas terus belum disahkan. Semak ketersediaan, lokasi jemputan, tempahan dan perjalanan pulang terakhir dengan resort sebelum bergantung pada shuttle. Kereta sendiri atau pemandu yang ditempah awal ialah pilihan lain.",
+      "Atur jemputan pulang sebelum bertolak. Sahkan pemandu, tempat bertemu dan cara menghubungi; jangan bergantung pada shuttle petang atau e-hailing yang belum disahkan."
+    ]
+  }
+],
       faq: [
-        { q: 'Adakah bas awam berhenti di pintu Taman Jepun?', a: 'Tiada perkhidmatan bas awam yang berhenti terus di pintu taman. Pilihan yang ada ialah shuttle resort, bas ke Bentong diikuti teksi/e-hailing, atau kenderaan sendiri.' },
-        { q: 'Berapa lama perjalanan dari Kuala Lumpur ke Taman Jepun?', a: 'Kira-kira 1 jam hingga 1 jam 30 minit dengan kereta melalui Lebuhraya Karak, bergantung pada trafik, cuaca dan kekerapan berhenti. Tambah masa jika anda berangkat pada hujung minggu atau musim cuti.' },
+        { q: 'Adakah bas awam berhenti di pintu Taman Jepun?', a: "Jadual shuttle Kuala Lumpur semasa dan perkhidmatan bas terus belum disahkan. Semak ketersediaan, lokasi jemputan, tempahan dan perjalanan pulang terakhir dengan resort sebelum bergantung pada shuttle. Kereta sendiri atau pemandu yang ditempah awal ialah pilihan lain." },
+        { q: 'Berapa lama perjalanan dari Kuala Lumpur ke Taman Jepun?', a: "Gunakan arah peta semasa dari Kuala Lumpur ke pin taman di Berjaya Hills melalui laluan Karak/Bukit Tinggi. Beri masa untuk trafik, cuaca dan berjalan mendaki; masa perjalanan tetap tidak dijanjikan." },
         { q: 'Selamatkah memandu turun selepas hujan lebat?', a: 'Jalan bukit boleh menjadi licin dan berkabus selepas hujan lebat. Pandu perlahan, hidupkan lampu, dan jika jarak penglihatan terlalu rendah, berhenti seketika di kawasan selamat sebelum meneruskan perjalanan.' }
       ],
       related: [
@@ -304,12 +331,12 @@ export const content: Content = {
       eyebrow: 'Foto & kimono',
       title: 'Foto & Sewa Kimono Taman Jepun Bukit Tinggi | Tip Bergambar',
       description: 'Sudut foto terbaik Taman Jepun Bukit Tinggi, waktu cahaya yang paling membantu, sewaan kimono/yukata dan etika bergambar — panduan ringkas untuk telefon dan kamera.',
-      h1: 'Foto & Sewaan Kimono di Taman Jepun',
+      h1: "Foto Taman Jepun Bukit Tinggi & Kimono",
       lede: 'Sebahagian besar pelawat datang ke Taman Jepun untuk bergambar. Panduan ini menyusun sudut yang paling kerap dirakam, masa yang sesuai, serta perkara praktikal tentang sewaan kimono dan etika di laluan sempit.',
       factsTitle: 'Ringkasan untuk bergambar',
       facts: [
         { label: 'Sudut ikonik', value: 'Kolam koi & jambatan batu' },
-        { label: 'Cahaya terbaik', value: 'Awal pagi / lewat petang' },
+        { label: 'Cahaya terbaik', value: "Ikut waktu aktiviti" },
         { label: 'Sewaan kimono', value: 'Caj berasingan' },
         { label: 'Tempoh sesuai', value: '1–2 jam' },
         { label: 'Permukaan', value: 'Batu & tangga, licin selepas hujan' }
@@ -331,7 +358,7 @@ export const content: Content = {
         {
           h2: 'Bila cahaya paling membantu',
           paras: [
-            'Awal pagi memberi udara lebih nyaman, cahaya lembut dan laluan yang belum sesak. Lewat petang memberi cahaya keemasan, tetapi bayangan pokok boleh menjadi lebih keras bergantung pada kedudukan matahari.',
+            "Sahkan waktu aktiviti sebelum merancang foto; waktu senarai peta bukan jadual sewaan kimono.",
             'Hari bekerja hampir selalu lebih selesa untuk bergambar tanpa menunggu giliran. Jika hujan baru berlalu, batu dan tangga boleh licin — utamakan keselamatan berbanding sudut yang sempurna.'
           ]
         },

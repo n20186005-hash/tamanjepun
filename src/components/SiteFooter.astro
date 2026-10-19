@@ -34,7 +34,7 @@ const guides = [
         <p>{FACTS.address.streetAddress}</p>
         <p>{FACTS.address.postalCode} {FACTS.address.addressLocality}, {FACTS.address.addressRegion}, Malaysia</p>
         <p>{t.footer.phoneLabel}: <a class="focus-ring rounded underline hover:text-[#a63d2f]" href={`tel:${FACTS.phoneHref}`}>{FACTS.phone}</a></p>
-        <p>{t.footer.hoursLabel}: {FACTS.openingHours}</p>
+        <p>{t.footer.hoursLabel}: {FACTS.openingHours} · {FACTS.lastUpdated}</p>
       </address>
       <a
         href={FACTS.mapsUrl}

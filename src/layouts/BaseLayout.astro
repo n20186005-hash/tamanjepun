@@ -86,7 +86,7 @@ const websiteLd = site
     <script async src={`https://www.googletagmanager.com/gtag/js?id=${FACTS.gaId}`}></script>
     <script is:inline define:vars={{ gaId: FACTS.gaId }}>
       window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
+      function gtag(){window.dataLayer.push(arguments);}
       gtag('js', new Date());
       gtag('config', gaId);
     </script>
