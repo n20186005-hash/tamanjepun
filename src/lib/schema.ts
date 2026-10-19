@@ -25,32 +25,15 @@ export function attractionSchema({ url, image, description, id, name, alternateN
     telephone: FACTS.phone,
     hasMap: FACTS.mapsUrl,
     isAccessibleForFree: false,
-    priceRange: FACTS.priceRange,
     address: { '@type': 'PostalAddress', ...FACTS.address },
     geo: { '@type': 'GeoCoordinates', ...FACTS.geo },
-    openingHours: `Mo-Su ${FACTS.opens}-${FACTS.closes}`,
-    openingHoursSpecification: [
-      {
-        '@type': 'OpeningHoursSpecification',
-        dayOfWeek: ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday'],
-        opens: FACTS.opens,
-        closes: FACTS.closes
-      }
-    ],
     amenityFeature: [
       { '@type': 'LocationFeatureSpecification', name: 'Japanese tea house', value: true },
       { '@type': 'LocationFeatureSpecification', name: 'Koi pond & stone garden', value: true },
       { '@type': 'LocationFeatureSpecification', name: 'Kimono / yukata rental', value: true },
       { '@type': 'LocationFeatureSpecification', name: 'Parking area', value: true }
     ],
-    touristType: ['Couples', 'Families', 'Photographers'],
-    aggregateRating: {
-      '@type': 'AggregateRating',
-      ratingValue: FACTS.ratingValue,
-      reviewCount: String(FACTS.reviewCount),
-      bestRating: '5',
-      worstRating: '1'
-    }
+    touristType: ['Couples', 'Families', 'Photographers']
   };
 }
 

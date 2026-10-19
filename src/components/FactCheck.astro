@@ -1,0 +1,20 @@
+---
+import { checks } from '../data/checks';
+import { FACTS } from '../data/site';
+import type { Locale } from '../i18n';
+const { locale } = Astro.props as { locale: Locale };
+const c = checks[locale];
+---
+<section class="mx-auto my-8 max-w-7xl px-5 lg:px-8" aria-labelledby="fact-check-title">
+  <div class="rounded-2xl border border-[#17352a]/20 bg-[#efe8da] p-5 sm:p-7">
+    <p class="text-sm font-semibold">{c.updated}</p>
+    <h2 id="fact-check-title" class="mt-2 text-xl font-bold">{c.title}</h2>
+    <p class="mt-3 leading-7">{c.identity}</p>
+    <p class="mt-3 leading-7">{c.hours}</p>
+    <p class="mt-3 leading-7">{c.tickets}</p>
+    <div class="mt-4 flex flex-wrap gap-4 text-sm font-bold">
+      <a class="focus-ring rounded underline" href={FACTS.mapsUrl} target="_blank" rel="noopener noreferrer">{c.map} ↗</a>
+      <a class="focus-ring rounded underline" href="https://www.colmartropicale.com.my/" target="_blank" rel="noopener noreferrer">{c.official} ↗</a>
+    </div>
+  </div>
+</section>

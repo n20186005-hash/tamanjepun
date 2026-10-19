@@ -21,10 +21,10 @@ const nav = [
 const homeHref = pathFor('home', locale);
 ---
 
-<header class="fixed inset-x-0 top-0 z-50 border-b border-white/10 bg-[#17352a]/90 backdrop-blur-xl">
-  <div class="mx-auto flex max-w-7xl items-center justify-between gap-3 px-5 py-3 lg:px-8">
+<header class="sticky top-0 z-50 border-b border-white/10 bg-[#17352a]/90 backdrop-blur-xl">
+  <div class="mx-auto flex max-w-7xl flex-wrap items-center justify-between gap-3 px-5 py-3 lg:px-8">
     <a href={homeHref} class="focus-ring rounded-lg" aria-label={t.brand}>
-      <img src="/brand/logo.svg" alt={t.brand} class="h-10 w-auto brightness-[4] grayscale sm:h-12" width="210" height="48" />
+      <img src="/brand/logo.svg" alt={t.brand} class="h-8 w-auto max-w-[130px] sm:max-w-none brightness-[4] grayscale sm:h-12" width="210" height="48" />
     </a>
 
     <nav class="hidden items-center gap-5 text-sm font-semibold text-[#f5f0e5] lg:flex" aria-label={t.nav.home}>
@@ -74,4 +74,8 @@ const homeHref = pathFor('home', locale);
       </a>
     </div>
   </div>
+  <nav class="flex gap-5 overflow-x-auto border-t border-white/15 px-5 py-2 text-sm font-semibold text-white lg:hidden" aria-label={t.nav.home}>
+    {nav.map((item) => <a class="focus-ring shrink-0 rounded px-1 py-1" href={pathFor(item.key, locale)} aria-current={route === item.key ? 'page' : undefined}>{item.label}</a>)}
+    <a class="focus-ring shrink-0 rounded px-1 py-1" href={`${homeHref}#faq`}>{t.nav.faq}</a>
+  </nav>
 </header>

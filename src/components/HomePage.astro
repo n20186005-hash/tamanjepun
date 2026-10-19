@@ -1,4 +1,5 @@
 ---
+import FactCheck from './FactCheck.astro';
 import Hero from './sections/Hero.astro';
 import About from './sections/About.astro';
 import Gallery from './sections/Gallery.astro';
@@ -18,6 +19,8 @@ const { locale, t } = Astro.props as { locale: Locale; t: Content };
 
 <main id="atas">
   <Hero t={t} />
+  <FactCheck locale={locale} />
+  <Explore locale={locale} t={t} />
   <About t={t} />
   <Gallery t={t} />
   <Plan t={t} />
@@ -25,7 +28,6 @@ const { locale, t } = Astro.props as { locale: Locale; t: Content };
   <Food t={t} />
   <Nearby t={t} />
   <MapSection t={t} />
-  <Explore locale={locale} t={t} />
   <Faq t={t} />
   <Closing t={t} />
 </main>

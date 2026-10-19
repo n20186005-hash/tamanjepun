@@ -1,4 +1,6 @@
 ---
+import Gallery from './sections/Gallery.astro';
+import FactCheck from './FactCheck.astro';
 import ArticleBody from './ArticleBody.astro';
 import type { Locale } from '../i18n';
 import type { ArticleKey, Content } from '../content/types';
@@ -8,3 +10,5 @@ const article = t.articles[articleKey];
 ---
 
 <ArticleBody locale={locale} t={t} article={article} />
+{articleKey === 'photos' && <Gallery t={t} />}
+<FactCheck locale={locale} />
